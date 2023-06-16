@@ -16,7 +16,6 @@ import static io.qameta.allure.Allure.step;
 public class JuicyScoreTests extends TestBase {
 
 
-
     @Test
     @Tag("remote")
     @Severity(SeverityLevel.TRIVIAL)
