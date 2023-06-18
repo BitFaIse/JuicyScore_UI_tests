@@ -3,20 +3,18 @@ package autotests.pages;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.*;
 
 public class AboutPage {
 
     private final String TITLE_TEXT = "О нас";
-    private final String DESCRIPTION_TEXT = "Мы даем рынку доступ к инструментам снижения рисков " +
-            "и повышения уровня доступности финансовых продуктов через интернет за счет " +
-            "технологий аутентификации устройства, сбора и анализа данных об устройстве.";
+    private final String TITLE_VACANCY = "International business development manager";
     private SelenideElement
 
-            menuNavigation = $(".header_nav"),
-            titleAbout = $(".section_title-title"),
-            descriptionAbout = $(".section_title--about");
+            menuNavigation = $(".header_container"),
+            currentLanguage = $(".header_langs");
 
 
     public AboutPage goToAboutPage() {
@@ -25,11 +23,22 @@ public class AboutPage {
         return this;
     }
 
-    public AboutPage verifyDescriptionOnAboutPage() {
+    public AboutPage changeLanguage() {
 
-        titleAbout.shouldHave(text(TITLE_TEXT));
-        descriptionAbout.
-                shouldHave(text(DESCRIPTION_TEXT));
+        currentLanguage.hover();
+        $$(".anotherLanguage").findBy(visible).click();
+        return this;
+    }
+
+    public AboutPage aboutVacancy() {
+
+        $(".about_vacancy_item").click();
+        return this;
+    }
+
+    public AboutPage verifyTitleVacancy() {
+
+        $(".article-title").shouldHave(text(TITLE_VACANCY));
         return this;
     }
 }

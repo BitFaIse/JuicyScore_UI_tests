@@ -2,7 +2,6 @@ package autotests.pages;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.Selenide.$;
 
 public class MainPage {
 
@@ -33,6 +32,4 @@ public class MainPage {
         $(".success").$(TEXT_NOTIFICATION);
         return this;
     }
-
-
 }

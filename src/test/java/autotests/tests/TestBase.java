@@ -2,6 +2,7 @@ package autotests.tests;
 
 import autotests.pages.AboutPage;
 import autotests.pages.ContactForm;
+import autotests.pages.DownloadsPage;
 import autotests.pages.MainPage;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
@@ -18,7 +19,7 @@ public class TestBase {
 
     ContactForm contactForm = new ContactForm();
     AboutPage aboutPage = new AboutPage();
-
+    DownloadsPage downloadsPage = new DownloadsPage();
     MainPage mainPage = new MainPage();
     TestData testData = new TestData();
 
@@ -27,14 +28,15 @@ public class TestBase {
         Configuration.baseUrl = "https://juicyscore.com";
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("browserVersion", "113.0");
-        Configuration.browserSize = System.getProperty("browserSize","1920x1080");
-        Configuration.remote = System.getProperty("selenoidUrl","http://192.168.31.160:8082/wd/hub");
+        Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
+//        Configuration.remote = System.getProperty("selenoidUrl","http://192.168.31.160:8082/wd/hub");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("selenoid:options", Map.<String, Object> of(
+        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,
                 "enableVideo", true
         ));
+
 
         Configuration.browserCapabilities = capabilities;
     }

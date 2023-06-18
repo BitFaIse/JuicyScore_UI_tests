@@ -16,15 +16,20 @@ public class JuicyScoreTests extends TestBase {
     @Severity(SeverityLevel.TRIVIAL)
     void checkDescriptionOnAboutPage() {
 
-
-        step("Открыть сайт 'https://juicyscore.com'", () -> {
+        step("Открыть сайт juicyscore.com", () -> {
             mainPage.openPage();
         });
-        step("Перейти в меню на страницу 'О нас'", () -> {
+        step("Перейти в меню на страницу О нас", () -> {
+            aboutPage.goToAboutPage();
         });
-        aboutPage.goToAboutPage();
+        step("Сменить язык содержимого сайта на английский (EN)", () -> {
+            aboutPage.changeLanguage();
+        });
+        step("Перейти на страницу с открытыми вакансиями", () -> {
+            aboutPage.aboutVacancy();
+        });
         step("Проверить описание на странице", () -> {
-            aboutPage.verifyDescriptionOnAboutPage();
+            aboutPage.verifyTitleVacancy();
         });
     }
 
@@ -32,7 +37,6 @@ public class JuicyScoreTests extends TestBase {
     @Tag("remote")
     @Severity(SeverityLevel.BLOCKER)
     void fillContactForm() {
-
 
         step("Открыть страницу с формой для связи", () -> {
             contactForm.openPage();
@@ -57,12 +61,28 @@ public class JuicyScoreTests extends TestBase {
 
     @Test
     @Tag("remote")
+    @Severity(SeverityLevel.CRITICAL)
+    void downloadPricePolicy() {
+
+        step("Перейти на страницу juicyscore.com/ru/downloads/", () -> {
+            downloadsPage.openDownloadsPage();
+        });
+        step("Проверить что скачанный файл содержит текст Базовые принципы ценообразования", () -> {
+            downloadsPage.verifyDownloadedFileContainsText();
+        });
+    }
+
+
+    @Test
+    @Tag("remote")
     @Severity(SeverityLevel.MINOR)
     void subscribeEmail() {
 
-
-        step("Открыть сайт 'https://juicyscore.com' и спуститься в футер", () -> {
+        step("Открыть сайт juicyscore.com и спуститься в футер", () -> {
             mainPage.openPage();
+            mainPage.scrollToFooter();
+        });
+        step("Cпуститься в футер", () -> {
             mainPage.scrollToFooter();
         });
         step("Ввести почту и подписаться на рассылку", () -> {
