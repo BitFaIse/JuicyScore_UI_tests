@@ -1,9 +1,9 @@
 {
   "base": {
-    "project": "Juicy Score UI tests",
+    "project": "${JOB_BASE_NAME}",
     "environment": "prod",
     "comment": "bla bla",
-    "reportLink": "http://localhost:8080/",
+    "reportLink": "${BUILD_URL}",
     "language": "ru",
     "messenger": "telegram",
     "allureFolder": "build/allure-report/",
