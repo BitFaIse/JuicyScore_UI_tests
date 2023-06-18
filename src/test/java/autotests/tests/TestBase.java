@@ -1,5 +1,8 @@
 package autotests.tests;
 
+import autotests.pages.AboutPage;
+import autotests.pages.ContactForm;
+import autotests.pages.MainPage;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import helpers.AllureAttachments;
@@ -12,6 +15,12 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.util.Map;
 
 public class TestBase {
+
+    ContactForm contactForm = new ContactForm();
+    AboutPage aboutPage = new AboutPage();
+
+    MainPage mainPage = new MainPage();
+    TestData testData = new TestData();
 
     @BeforeAll
     static void beforeAll() {

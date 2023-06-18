@@ -1,0 +1,17 @@
+{
+  "base": {
+    "project": "Juicy Score UI tests",
+    "environment": "prod",
+    "comment": "bla bla",
+    "reportLink": "http://localhost:8080/",
+    "language": "ru",
+    "messenger": "telegram",
+    "allureFolder": "build/allure-report/",
+    "enableChart": true
+  },
+  "telegram": {
+    "token": "6092763865:AAGaAQsz_vtR5jvvQjsVYqG4B6ci3Fd1s_k",
+    "chat": "-1001957327644",
+    "replyTo": ""
+  }
+}
