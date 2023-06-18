@@ -29,7 +29,7 @@ public class TestBase {
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("browserVersion", "113.0");
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
-//        Configuration.remote = System.getProperty("selenoidUrl","http://192.168.31.160:8082/wd/hub");
+        Configuration.remote = System.getProperty("selenoidUrl","http://192.168.31.160:8082/wd/hub");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
