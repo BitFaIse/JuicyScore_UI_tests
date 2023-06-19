@@ -128,5 +128,9 @@ allure serve build/allure-results
 <img title="Allure Overview Dashboard" src="images/screens/teleg.png" >
 </p>
 
+
+
+
 ## ⬇️: Пример запуска тестов в Selenoid
-## <img src="images/logo/Selenoid.svg" width="25" height="25" alt="Jenkins"/></a> Видео прохождения тестов </a>[selenoid.mp4](images%2Fvideo%2Fselenoid.mp4)
+## <img src="images/logo/Selenoid.svg" width="25" height="25" alt="Jenkins"/></a> Видео прохождения тестов </a>
+https://github.com/BitFaIse/JuicyScore_UI_tests/assets/123478493/70abc86e-c713-4dce-9330-2b95bcccc57a
